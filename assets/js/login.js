@@ -59,7 +59,7 @@ $(function () {
     )
   })
 
-  //   登陆 功能
+  // 登陆 功能
   $('#form_login').on('submit', function (e) {
     // 阻止表单 跳转的 默认行为
     e.preventDefault()
@@ -81,3 +81,73 @@ $(function () {
     })
   })
 })
+
+//----------------------//
+// $(function () {
+//   // 点击去 注册
+//   $('#link_reg').on('click', function () {
+//     // 注册页面显示
+//     $('.reg-box').show()
+//     // 登录页面隐藏
+//     $('.login-box').hide()
+//   })
+//   //   点击登录
+//   $('#link_login').on('click', function () {
+//     // 登录页面显示
+//     $('.login-box').show()
+//     // 注册页面隐藏
+//     $('.reg-box').hide()
+//   })
+
+//   //   正则验证
+//   //   先用 变量获取
+//   const form = layui.form
+//   const layer = layui.layer
+//   // 注册 事件
+//   form.verify({
+//     // 密码正则
+//     pass: [/^[\S]{6,12}$/, '密码必须6到12位，且不能出现空格'],
+//     // 给一个判断 密码与 确定密码 是否一致
+//     repwd: function (value) {
+//       let pass = $('.reg-box[name=password]').val()
+//       if (pass !== value) {
+//         layer.msg('两次输入不一致')
+//       }
+//     }
+//   })
+
+//   // 注册 功能 监听注册  表单提交事件
+//   $('#form_reg').on('submit', function (e) {
+//     // / 阻止表单 跳转的 默认行为
+//     e.preventDefault()
+//     $.post(
+//       'http://ajax.frontend.itheima.net/api/reguser',
+//       {
+//         username: $('#form_reg [name= username]').val(),
+//         password: $('#form_reg [name= password]').val()
+//       },
+//       function (res) {
+//         if (res.status !== 0) return layer.msg('注册失败')
+//       },
+//       layer.msg('注册成功'),
+//       $('#link_login').click()
+//     )
+//   })
+
+//   // 登录功能
+//   // 监听 登录 事件
+//   $('#form_login').on('submit', function (e) {
+//     e.preventDefault()
+//     let data = $(this).serialize()
+//     $.post('http://ajax.frontend.itheima.net', data, function (res) {
+//       if (res.status === 0) {
+//         return layer.msg('登录失败')
+//       }
+//       layer.msg('登录成功'),
+//           //         // 储存到 本地 存储
+//           localStorage.setItem('token', res.token),
+//           //         // 跳转到后台 主页
+//           (location.href = '/index.html')
+//     })
+//   })
+// })
